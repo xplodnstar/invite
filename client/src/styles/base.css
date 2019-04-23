@@ -1,0 +1,102 @@
+html {
+  box-sizing:border-box;
+}
+
+*, *::before, *::after {
+  box-sizing:inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  background-color: rgb(48, 22, 3);
+  color: rgb(228, 108, 23);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  width: 800px;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 150%;
+}
+
+.title h1 {
+  color: darkgoldenrod;
+  margin: 3px 0;
+}
+
+.title h2 {
+  margin: 3px 0;
+}
+
+.title h4 {
+  color: darkgoldenrod;
+  margin: 3px 0;
+}
+
+.card {
+  width: 750px;
+  height: 400px;
+  margin: auto;
+  background-color: rgb(228, 108, 23);
+  color: rgb(48, 22, 3);
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.person {
+  width: 650px;
+  height: 200px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  margin: 0 50px 0 0;
+}
+
+.info {
+  align-self: center;
+}
+
+.label {
+  font-size: 16px;
+  margin: 0 0 0 0;
+}
+
+.info p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 0 0;
+}
+
+.age {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  width: 200px;
+  height: 80px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(48, 22, 3);
+  color: darkgoldenrod;
+  font-size: 50px;
+  line-height: 40px;
+}
