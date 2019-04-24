@@ -7,10 +7,10 @@ const initialState = {
   phone: '',
   age: '',
   picture: '',
-  thumbnail: ''
+  thumbnail: '',
 }
 
-export default function (state = initialState, action) {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case 'GET_PERSON':
       return {
@@ -23,16 +23,16 @@ export default function (state = initialState, action) {
         picture: action.person.picture.large,
         thumbnail: action.person.picture.thumbnail,
       }
-    case 'CAROUSEL':
-      return {
-        ...state,
-        carousel: [action.carousel, ...state.carousel]
-      }
-    case 'SANCTUARY':
-      return {
-        ...state,
-        sanctuary: [action.sanctuary, ...state.sanctuary]
-      }
+    // case 'CAROUSEL':
+    //   return {
+    //     ...state,
+    //     carousel: [action.carousel, ...state.carousel]
+    //   }
+    // case 'SANCTUARY':
+    //   return {
+    //     ...state,
+    //     sanctuary: [action.sanctuary, ...state.sanctuary]
+    //   }
     default:
       return state
   }

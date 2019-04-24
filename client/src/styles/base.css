@@ -17,7 +17,7 @@ body {
 }
 
 .app {
-  width: 800px;
+  width: 900px;
   margin: auto;
 }
 
@@ -42,7 +42,7 @@ body {
 
 .card {
   width: 750px;
-  height: 400px;
+  height: 450px;
   margin: auto;
   background-color: rgb(228, 108, 23);
   color: rgb(48, 22, 3);
@@ -99,4 +99,118 @@ button {
   color: darkgoldenrod;
   font-size: 50px;
   line-height: 40px;
+  outline: none;
+}
+
+.listLinks {
+  display: flex;
+  justify-content: space-around;
+}
+
+.listLinks div{
+  width: 200px;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(48, 22, 3);
+}
+
+
+
+.caroTitle {
+  text-align: center;
+  font-size: 200%;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.caroCards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.caroPeople {
+  list-style: none;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  background-color: rgb(228, 108, 23);
+  color: rgb(48, 22, 3);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.caroPerson {
+  width: 150px;
+  height: 100px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#caroPicture {
+  width: 50px;
+  height: 50px;
+  margin: 25px 0 0;
+  border-radius: 50%;
+}
+
+.caroInfo p {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 0 0;
+  text-align: center;
+}
+
+.sancTitle {
+  text-align: center;
+  font-size: 200%;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.sancCards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sancPeople {
+  list-style: none;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  background-color: rgb(228, 108, 23);
+  color: rgb(48, 22, 3);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.sancPerson {
+  width: 150px;
+  height: 100px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#sancPicture {
+  width: 50px;
+  height: 50px;
+  margin: 25px 0 0;
+  border-radius: 50%;
+}
+
+.sancInfo p {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 0 0;
+  text-align: center;
 }
