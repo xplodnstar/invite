@@ -4,13 +4,41 @@ import { Link } from 'react-router-dom'
 import { GiCircleSparks } from "react-icons/gi"
 import { GiSecretBook } from "react-icons/gi"
 
-import { getPerson } from '../actions/actions'
-// import router from '.../server/routes/index'
-// { addCarousel, addSanctuary }
+import { getPerson, getCarousel, getSanctuary, carousel, sanctuary } from '../actions/actions'
 
 
 class Person extends Component {
     componentDidMount() {
+        getPerson()
+        getCarousel()
+        getSanctuary()
+    }
+
+    addCarousel = (e) => {
+        e.preventDefault()
+        carousel({
+            first: this.props.first,
+            last: this.props.last,
+            email: this.props.email,
+            phone: this.props.phone,
+            age: this.props.age,
+            picture: this.props.picture,
+            thumbnail: this.props.thumbnail,
+        })
+        getPerson()
+    }
+
+    addSanctuary = (e) => {
+        e.preventDefault()
+        sanctuary({
+            first: this.props.first,
+            last: this.props.last,
+            email: this.props.email,
+            phone: this.props.phone,
+            age: this.props.age,
+            picture: this.props.picture,
+            thumbnail: this.props.thumbnail,
+        })
         getPerson()
     }
 
@@ -27,17 +55,10 @@ class Person extends Component {
                 </div>
                 <div className="age">{this.props.age}</div>
                 <form className="buttons">
-                    <div className="button"><button id="carousel"
-                    // action="/carousel" method="POST"
-                    // onClick={addCarousel()}
-                    ><GiCircleSparks></GiCircleSparks></button></div>
-                    <div className="button"><button id="sanctuary"
-                    // method="POST" action="/sanctuary"
-                    // onClick={addSanctuary()}
-                    ><GiSecretBook></GiSecretBook></button></div>
+                    <div className="button"><button id="carousel" onClick={this.addCarousel} ><GiCircleSparks></GiCircleSparks></button></div>
+                    <div className="button"><button id="sanctuary" onClick={this.addSanctuary}><GiSecretBook></GiSecretBook></button></div>
                 </form>
                 <div className="listLinks">
-                    {/* need to reference the number of items in the array */}
                     <div><Link className="link" to="/carousel">Carousel {this.props.carousel.length}</Link></div>
                     <div><Link className="link" to="/sanctuary">Sanctuary {this.props.sanctuary.length}</Link></div>
                 </div>

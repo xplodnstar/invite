@@ -1,43 +1,31 @@
 var express = require('express')
-const bodyParser = require('body-parser')
 var router = express.Router()
 
-const app = express()
+let carousel = []
+let sanctuary = []
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-
-var carousel = []
-var sanctuary = []
-
-// how do I distinguish the two buttons' post? how do I attach the method to the button?
-router.post('/', function (req, res, next) {
-  carousel.push({
-    first: req.body.first,
-    last: req.body.last,
-    email: req.body.email,
-    phone: req.body.phone,
-    age: req.body.age,
-    picture: req.body.picture,
-    thumbnail: req.body.thumbnail,
-  })
-
+router.get('/carousel', (req, res, next) => {
   res.json(carousel)
-});
+})
 
-router.post('/', function (req, res, next) {
-  sanctuary.push({
-    first: req.body.first,
-    last: req.body.last,
-    email: req.body.email,
-    phone: req.body.phone,
-    age: req.body.age,
-    picture: req.body.picture,
-    thumbnail: req.body.thumbnail,
-  })
-
+router.get('/sanctuary', (req, res, next) => {
   res.json(sanctuary)
+})
+
+router.post('/carousel', (req, res, next) => {
+  carousel.push(req.body)
+
+  res.json({
+    message: 'Riding the Carousel'
+  })
 });
 
+router.post('/sanctuary', (req, res, next) => {
+  sanctuary.push(req.body)
+
+  res.json({
+    message: 'Running to Sanctuary'
+  })
+});
 
 module.exports = router;

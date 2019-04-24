@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { getSanctuary } from '../actions/actions'
+import { GiReturnArrow } from "react-icons/gi"
 
 class Sanctuary extends Component {
+    componentDidMount() {
+        getSanctuary()
+    }
+
     render() {
         return (
             <div className="sanctuary">
                 <div className="sancTitle">Headed to Sanctuary</div>
+                <Link to="/" className="return"><GiReturnArrow></GiReturnArrow> Back to Home Page</Link>
                 <ul className="sancCards">
                     {this.props.sanctuary.map(person => (
                         <li className="sancPeople" key={person.email}>

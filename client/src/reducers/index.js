@@ -23,16 +23,16 @@ export default function reducer(state = initialState, action) {
         picture: action.person.picture.large,
         thumbnail: action.person.picture.thumbnail,
       }
-    // case 'CAROUSEL':
-    //   return {
-    //     ...state,
-    //     carousel: [action.carousel, ...state.carousel]
-    //   }
-    // case 'SANCTUARY':
-    //   return {
-    //     ...state,
-    //     sanctuary: [action.sanctuary, ...state.sanctuary]
-    //   }
+    case 'GET_CAROUSEL':
+      return {
+        ...state,
+        carousel: action.carousel
+      }
+    case 'GET_SANCTUARY':
+      return {
+        ...state,
+        sanctuary: action.sanctuary
+      }
     default:
       return state
   }

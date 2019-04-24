@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { getCarousel } from '../actions/actions'
+import { GiReturnArrow } from "react-icons/gi"
 
 class Carousel extends Component {
+    componentDidMount() {
+        getCarousel()
+    }
 
     render() {
         return (
             <div className="carousel">
                 <div className="caroTitle">Going to the Carousel</div>
+                <Link to="/" className="return"><GiReturnArrow></GiReturnArrow> Back to Home Page</Link>
                 <ul className="caroCards">
                     {this.props.carousel.map(person => (
                         <li className="caroPeople" key={person.email}>

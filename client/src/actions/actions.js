@@ -10,18 +10,33 @@ export function getPerson() {
     })
 }
 
-// export function addCarousel() {
-//     store.dispatch({
-//         type: 'CAROUSEL',
-//         carousel: carousel
-//     })
-// }
+export function getCarousel() {
+    axios.get('/api/carousel').then(resp => {
+        store.dispatch({
+            type: 'GET_CAROUSEL',
+            carousel: resp.data
+        })
+    })
+}
 
-// export function addSanctuary() {
-//     store.dispatch({
-//         type: 'SANCTUARY',
-//         sanctuary: sanctuary
-//     })
-// }
+export function getSanctuary() {
+    axios.get('/api/sanctuary').then(resp => {
+        store.dispatch({
+            type: 'GET_SANCTUARY',
+            sanctuary: resp.data
+        })
+    })
+}
 
+export function carousel(person) {
+    console.log(person)
+    axios.post('/api/carousel', person).then(() => {
+        getCarousel()
+    })
+}
 
+export function sanctuary(person) {
+    axios.post('/api/sanctuary', person).then(() => {
+        getSanctuary()
+    })
+}
